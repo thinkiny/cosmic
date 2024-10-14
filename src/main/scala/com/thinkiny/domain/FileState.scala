@@ -1,3 +1,8 @@
 package com.thinkiny.domain
 
-case class FileState(isDir: Boolean, size: Long, modifyTime: Long)
+case class FileState(
+    isDir: Boolean,
+    size: Long,
+    modifyTime: Long,
+    path: String
+)

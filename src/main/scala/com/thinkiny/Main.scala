@@ -1,13 +1,14 @@
 package com.thinkiny
 
-import cats.effect.IOApp
+import cats.effect.ExitCode
 import cats.effect.IO
-import com.thinkiny.service.implicits.given
-import com.thinkiny.service.syntax.*
-import com.thinkiny.domain.RemoteFilePath
+import com.monovore.decline.Opts
+import com.monovore.decline.effect.CommandIOApp
+import com.thinkiny.cli.*
 
-object Main extends IOApp.Simple:
-  override def run: IO[Unit] =
-    RemoteFilePath("root@jad#60022:~") match
-      case Some(p) => p.getState[IO].map(println)
-      case _       => IO.unit
+object Main extends CommandIOApp(name = "cosmic", header = "manage files"):
+  def runCommands[F[_]](cmds: CliCommand[?, F]*): Opts[F[Unit]] =
+    cmds.foldLeft(Opts.never)((b, a) => b.orElse(a.run()))
+
+  override def main: Opts[IO[ExitCode]] =
+    runCommands(SyncCommand, LsCommand).map(_.as(ExitCode.Success))

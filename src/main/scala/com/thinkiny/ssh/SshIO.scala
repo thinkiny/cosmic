@@ -9,22 +9,43 @@ import cats.effect.IO
 import com.jcraft.jsch.Session
 import scala.util.Try
 import scala.collection.mutable.HashMap
+import java.nio.file.Files
+import java.nio.file.Paths
+import com.jcraft.jsch.OpenSSHConfig
 
 object SshIO:
+  val home = System.getProperty("user.home")
+  val sshConfFile = s"${home}/.ssh/config"
+  val privateKeyFile = s"${home}/.ssh/id_rsa"
+
+  def createJsch(): JSch = {
+    val jsch = new JSch
+    jsch.addIdentity(privateKeyFile)
+    if Files.exists(Paths.get(sshConfFile)) then
+      val sshConfig = OpenSSHConfig.parseFile(sshConfFile)
+      jsch.setConfigRepository(sshConfig)
+    jsch
+  }
+
   def createSession(
       user: String,
       host: String,
       port: Int
   ): Option[Session] =
     Try {
-      val jsch = new JSch
+      val jsch = createJsch()
       val session = jsch.getSession(user, host, port)
       val config = new Properties()
 
-      jsch.addIdentity(s"${System.getProperty("user.home")}/.ssh/id_rsa")
+      if session.getPort() == -1 then session.setPort(22)
       config.put("StrictHostKeyChecking", "no")
       session.setConfig(config)
-      session.connect()
+      session.setTimeout(30000) // milliseconds
+      try session.connect()
+      catch
+        case x => {
+          x.printStackTrace(); throw x
+        }
       session
     }.toOption
 
