@@ -13,7 +13,7 @@ object RsyncFile:
         src: FilePath,
         dest: FilePath,
         actions: MergeStrategy*
-    ): F[SyncResult[Unit]] =
+    ): F[Error[Unit]] =
       LocationFile[F].getState(src).flatMap {
         case Some(stat) =>
           Execute[F].run(makeCommand(src, dest, stat, actions*))

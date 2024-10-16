@@ -7,13 +7,13 @@ import fs2.text
 import cats.syntax.all.*
 
 trait Execute[F[_]]:
-  def run(cmd: String): F[SyncResult[Unit]]
+  def run(cmd: String): F[Error[Unit]]
 
 object Execute:
   def apply[F[_]](using ev: Execute[F]) = ev
 
   def show[F[_]: Applicative]: Execute[F] = new {
-    override def run(cmd: String): F[SyncResult[Unit]] =
+    override def run(cmd: String): F[Error[Unit]] =
       cmd.pure[F].map(i => Right(println(s"show: ${i}")))
   }
 
@@ -24,7 +24,7 @@ object Execute:
         .compile
         .drain
 
-    def checkReturnCode(process: Process[IO]): IO[SyncResult[Unit]] =
+    def checkReturnCode(process: Process[IO]): IO[Error[Unit]] =
       (
         process.stderr.through(text.utf8.decode).compile.string,
         process.exitValue
@@ -34,7 +34,7 @@ object Execute:
           case (s, _) => Left(s)
         }
 
-    override def run(cmd: String): IO[SyncResult[Unit]] =
+    override def run(cmd: String): IO[Error[Unit]] =
       IO.println(s"run: ${cmd}") >>
         ProcessBuilder("bash", List("-c", cmd)).spawn[IO].use { process =>
           writeOutput(process) >> checkReturnCode(process)

@@ -7,6 +7,11 @@ import fs2.io.file.Path
 
 object LocalLocationIO:
   def dsl: LocalLocation[IO] = new {
+    def makePath(p: String) =
+      if p.startsWith("~") then
+        Path(p.replaceFirst("~", System.getProperty("user.home")))
+      else Path(p)
+
     def makeFileState(p: Path): IO[FileState] =
       for
         isDir <- Files[IO].isDirectory(p)
@@ -15,7 +20,7 @@ object LocalLocationIO:
       yield FileState(isDir, size, mtime.toSeconds, p.absolute.toString)
 
     override def getState(p: LocalPath): IO[Option[FileState]] =
-      val path = Path(p.path)
+      val path = makePath(p.path)
       Files[IO]
         .exists(path)
         .ifM(
@@ -24,7 +29,7 @@ object LocalLocationIO:
         )
 
     override def listFiles(p: LocalPath): IO[List[FileState]] =
-      val path = Path(p.path)
+      val path = makePath(p.path)
       Files[IO]
         .isDirectory(path)
         .ifM(

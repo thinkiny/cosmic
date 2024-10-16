@@ -54,8 +54,9 @@ object LsCommand extends CliCommand[LsOptions, IO]:
     IO.pure(args.file)
       .map(FilePath(_))
       .flatMap:
-        case x @ Some(p) => LocationFile[IO].getState(p).map(_.zip(x))
-        case _           => IO.none
+        case x @ Some(p) =>
+          LocationFile[IO].getState(p).map(_.zip(x))
+        case _ => IO.none
       .flatMap:
         case Some((s, p)) =>
           if s.isDir then
