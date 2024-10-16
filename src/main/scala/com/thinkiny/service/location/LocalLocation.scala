@@ -15,9 +15,12 @@ object LocalLocationIO:
     def makeFileState(p: Path): IO[FileState] =
       for
         isDir <- Files[IO].isDirectory(p)
-        size <- Files[IO].size(p)
-        mtime <- Files[IO].getLastModifiedTime(p)
-      yield FileState(isDir, size, mtime.toSeconds, p.absolute.toString)
+        size <- Files[IO].size(p).handleError(_ => 0L)
+        mtime <- Files[IO]
+          .getLastModifiedTime(p)
+          .map(_.toSeconds)
+          .handleError(_ => 0L)
+      yield FileState(isDir, size, mtime, p.absolute.toString)
 
     override def getState(p: LocalPath): IO[Option[FileState]] =
       val path = makePath(p.path)

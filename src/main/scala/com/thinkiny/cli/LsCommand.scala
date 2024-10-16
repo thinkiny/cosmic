@@ -42,13 +42,22 @@ object LsCommand extends CliCommand[LsOptions, IO]:
     if long then
       val dir = if fs.isDir then "DIR" else "FIL"
       f"${dir}  ${fs.size.toString}%12s  ${formatDateTime(fs.modifyTime)}  ${colorName}"
-    else colorName
+    else
+      val spaces = Math.max(1, 20 - fileName.size)
+      colorName + s"${" " * spaces}"
 
   def printListFiles(files: List[FileState], longFormat: Boolean): IO[Unit] =
-    val dirsFirst = files.sortBy(s => (!s.isDir, s.path.getFileName))
+    val dirsFirst =
+      files.sortBy(s => (!s.isDir, s.path.getFileName.toLowerCase()))
     if longFormat then
       IO.println(dirsFirst.map(formatOutput(_, longFormat)).mkString("\n"))
-    else IO.println(dirsFirst.map(formatOutput(_, longFormat)).mkString(" "))
+    else
+      IO.println(
+        dirsFirst
+          .grouped(5)
+          .map(_.map(formatOutput(_, longFormat)).mkString)
+          .mkString("\n")
+      )
 
   override def run(args: LsOptions): IO[Unit] =
     IO.pure(args.file)
