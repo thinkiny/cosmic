@@ -41,11 +41,7 @@ object SshIO:
       config.put("StrictHostKeyChecking", "no")
       session.setConfig(config)
       session.setTimeout(30000) // milliseconds
-      try session.connect()
-      catch
-        case x => {
-          x.printStackTrace(); throw x
-        }
+      session.connect()
       session
     }.toOption
 

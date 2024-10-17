@@ -1,0 +1,1061 @@
+[
+{
+  "type":"[B"
+},
+{
+  "type":"[B"
+},
+{
+  "type":"[C"
+},
+{
+  "type":"[C"
+},
+{
+  "type":"[D"
+},
+{
+  "type":"[D"
+},
+{
+  "type":"[F"
+},
+{
+  "type":"[F"
+},
+{
+  "type":"[I"
+},
+{
+  "type":"[I"
+},
+{
+  "type":"[J"
+},
+{
+  "type":"[J"
+},
+{
+  "type":"[Lcom.thinkiny.domain.FileState;"
+},
+{
+  "type":"[Ljava.lang.String;"
+},
+{
+  "type":"[Ljava.lang.String;"
+},
+{
+  "type":"[Ljavax.management.openmbean.CompositeData;"
+},
+{
+  "type":"[Ljavax.management.openmbean.CompositeData;"
+},
+{
+  "type":"[S"
+},
+{
+  "type":"[S"
+},
+{
+  "type":"[Z"
+},
+{
+  "type":"[Z"
+},
+{
+  "type":"cats.Later",
+  "fields":[{"name":"value$lzy1"}]
+},
+{
+  "type":"cats.Later",
+  "fields":[{"name":"value$lzy1"}]
+},
+{
+  "type":"cats.effect.metrics.CpuStarvation",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"cats.effect.metrics.CpuStarvation",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"cats.effect.metrics.CpuStarvationMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"cats.effect.metrics.CpuStarvationMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"cats.effect.std.Console$",
+  "fields":[{"name":"0bitmap$1"}]
+},
+{
+  "type":"cats.effect.std.Console$",
+  "fields":[{"name":"0bitmap$1"}]
+},
+{
+  "type":"cats.effect.unsafe.Head",
+  "fields":[{"name":"head"}]
+},
+{
+  "type":"cats.effect.unsafe.Head",
+  "fields":[{"name":"head"}]
+},
+{
+  "type":"cats.effect.unsafe.Tail",
+  "fields":[{"name":"tailPublisher"}]
+},
+{
+  "type":"cats.effect.unsafe.Tail",
+  "fields":[{"name":"tailPublisher"}]
+},
+{
+  "type":"cats.effect.unsafe.TimerSkipListNodeBase",
+  "fields":[{"name":"callback"}]
+},
+{
+  "type":"cats.effect.unsafe.TimerSkipListNodeBase",
+  "fields":[{"name":"callback"}]
+},
+{
+  "type":"cats.effect.unsafe.metrics.ComputePoolSampler",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"cats.effect.unsafe.metrics.ComputePoolSampler",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"cats.effect.unsafe.metrics.ComputePoolSamplerMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"cats.effect.unsafe.metrics.ComputePoolSamplerMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"cats.effect.unsafe.metrics.LiveFiberSnapshotTrigger",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"cats.effect.unsafe.metrics.LiveFiberSnapshotTrigger",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"cats.effect.unsafe.metrics.LiveFiberSnapshotTriggerMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"cats.effect.unsafe.metrics.LiveFiberSnapshotTriggerMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"cats.effect.unsafe.metrics.LocalQueueSampler",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"cats.effect.unsafe.metrics.LocalQueueSampler",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"cats.effect.unsafe.metrics.LocalQueueSamplerMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"cats.effect.unsafe.metrics.LocalQueueSamplerMBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"com.jcraft.jsch.DH25519",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.DH25519",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.DH25519SNTRUP761",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.DH25519SNTRUP761",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.DH448",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.DH448",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.DHEC256",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.DHEC256",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.UserAuthNone",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.UserAuthNone",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.UserAuthPublicKey",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.UserAuthPublicKey",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.bc.SNTRUP761"
+},
+{
+  "type":"com.jcraft.jsch.bc.SNTRUP761"
+},
+{
+  "type":"com.jcraft.jsch.bc.SignatureEd25519"
+},
+{
+  "type":"com.jcraft.jsch.bc.SignatureEd25519"
+},
+{
+  "type":"com.jcraft.jsch.bc.SignatureEd448"
+},
+{
+  "type":"com.jcraft.jsch.bc.SignatureEd448"
+},
+{
+  "type":"com.jcraft.jsch.bc.XDH",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.bc.XDH",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.jce.AES128CTR",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.jce.AES128CTR",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.jce.ECDHN",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.jce.ECDHN",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.jce.HMACSHA1",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.jce.HMACSHA1",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.jce.HMACSHA256ETM",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.jce.HMACSHA256ETM",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.jce.Random",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.jce.Random",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.jce.SHA256",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.jce.SHA256",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.jce.SHA512",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.jce.SHA512",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.jce.SignatureECDSA256",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.jce.SignatureECDSA256",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.jce.SignatureRSASHA512",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.jcraft.jsch.jce.SignatureRSASHA512",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.monovore.decline.effect.CommandIOApp",
+  "fields":[{"name":"0bitmap$1"}]
+},
+{
+  "type":"com.monovore.decline.effect.CommandIOApp",
+  "fields":[{"name":"0bitmap$1"}]
+},
+{
+  "type":"com.sun.crypto.provider.AESCipher$General",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.sun.crypto.provider.AESCipher$General",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.sun.crypto.provider.HmacCore$HmacSHA256",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.sun.crypto.provider.HmacCore$HmacSHA256",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"com.sun.management.GarbageCollectorMXBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"com.sun.management.GarbageCollectorMXBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"com.sun.management.GcInfo",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"com.sun.management.GcInfo",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"com.sun.management.HotSpotDiagnosticMXBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"com.sun.management.HotSpotDiagnosticMXBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"com.sun.management.ThreadMXBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"com.sun.management.ThreadMXBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"com.sun.management.UnixOperatingSystemMXBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"com.sun.management.UnixOperatingSystemMXBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"com.sun.management.VMOption",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"com.sun.management.VMOption",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"com.sun.management.internal.GarbageCollectorExtImpl",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"com.sun.management.internal.GarbageCollectorExtImpl",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"com.sun.management.internal.HotSpotDiagnostic",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"com.sun.management.internal.HotSpotDiagnostic",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"com.sun.management.internal.HotSpotThreadImpl",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"com.sun.management.internal.HotSpotThreadImpl",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"com.sun.management.internal.OperatingSystemImpl",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"com.sun.management.internal.OperatingSystemImpl",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"com.thinkiny.implicits$",
+  "fields":[{"name":"given_Execute_IO$lzy1"},{"name":"given_LocalLocation_IO$lzy1"},{"name":"given_LocationFile_IO$lzy1"},{"name":"given_RemoteLocation_IO$lzy1"},{"name":"given_Ssh_IO$lzy1"}]
+},
+{
+  "type":"com.thinkiny.implicits$",
+  "fields":[{"name":"given_Execute_IO$lzy1"},{"name":"given_LocalLocation_IO$lzy1"},{"name":"given_LocationFile_IO$lzy1"},{"name":"given_RemoteLocation_IO$lzy1"},{"name":"given_Ssh_IO$lzy1"}]
+},
+{
+  "type":"fs2.Chunk$",
+  "fields":[{"name":"IArraySlice$lzy1"}]
+},
+{
+  "type":"fs2.Chunk$",
+  "fields":[{"name":"IArraySlice$lzy1"}]
+},
+{
+  "type":"fs2.Chunk$Queue",
+  "fields":[{"name":"accumulatedLengths$lzy1"}]
+},
+{
+  "type":"fs2.internal.ScopedResource$$anon$1",
+  "fields":[{"name":"TheLease$lzy1"}]
+},
+{
+  "type":"fs2.io.package$",
+  "fields":[{"name":"fs2$io$ioplatform$$stdinExecutor$lzy1"}]
+},
+{
+  "type":"java.lang.Boolean",
+  "fields":[{"name":"TYPE"}]
+},
+{
+  "type":"java.lang.Boolean",
+  "fields":[{"name":"TYPE"}]
+},
+{
+  "type":"java.lang.Byte",
+  "fields":[{"name":"TYPE"}]
+},
+{
+  "type":"java.lang.Byte",
+  "fields":[{"name":"TYPE"}]
+},
+{
+  "type":"java.lang.Character",
+  "fields":[{"name":"TYPE"}]
+},
+{
+  "type":"java.lang.Character",
+  "fields":[{"name":"TYPE"}]
+},
+{
+  "type":"java.lang.ClassValue"
+},
+{
+  "type":"java.lang.ClassValue"
+},
+{
+  "type":"java.lang.Deprecated",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"java.lang.Deprecated",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"java.lang.Double",
+  "fields":[{"name":"TYPE"}]
+},
+{
+  "type":"java.lang.Double",
+  "fields":[{"name":"TYPE"}]
+},
+{
+  "type":"java.lang.Float",
+  "fields":[{"name":"TYPE"}]
+},
+{
+  "type":"java.lang.Float",
+  "fields":[{"name":"TYPE"}]
+},
+{
+  "type":"java.lang.Integer",
+  "fields":[{"name":"TYPE"}]
+},
+{
+  "type":"java.lang.Integer",
+  "fields":[{"name":"TYPE"}]
+},
+{
+  "type":"java.lang.Long",
+  "fields":[{"name":"TYPE"}]
+},
+{
+  "type":"java.lang.Long",
+  "fields":[{"name":"TYPE"}]
+},
+{
+  "type":"java.lang.Short",
+  "fields":[{"name":"TYPE"}]
+},
+{
+  "type":"java.lang.Short",
+  "fields":[{"name":"TYPE"}]
+},
+{
+  "type":"java.lang.StackTraceElement",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"java.lang.StackTraceElement",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"java.lang.String",
+  "fields":[{"name":"TYPE"}]
+},
+{
+  "type":"java.lang.String",
+  "fields":[{"name":"TYPE"}]
+},
+{
+  "type":"java.lang.Thread",
+  "fields":[{"name":"threadLocalRandomProbe"}]
+},
+{
+  "type":"java.lang.Thread",
+  "fields":[{"name":"threadLocalRandomProbe"}]
+},
+{
+  "type":"java.lang.Void",
+  "fields":[{"name":"TYPE"}]
+},
+{
+  "type":"java.lang.Void",
+  "fields":[{"name":"TYPE"}]
+},
+{
+  "type":"java.lang.invoke.VarHandle",
+  "methods":[{"name":"releaseFence","parameterTypes":[] }]
+},
+{
+  "type":"java.lang.invoke.VarHandle",
+  "methods":[{"name":"releaseFence","parameterTypes":[] }]
+},
+{
+  "type":"java.lang.management.BufferPoolMXBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"java.lang.management.BufferPoolMXBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"java.lang.management.ClassLoadingMXBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"java.lang.management.ClassLoadingMXBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"java.lang.management.CompilationMXBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"java.lang.management.CompilationMXBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"java.lang.management.LockInfo",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"java.lang.management.LockInfo",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"java.lang.management.ManagementPermission",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String"] }]
+},
+{
+  "type":"java.lang.management.ManagementPermission",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String"] }]
+},
+{
+  "type":"java.lang.management.MemoryMXBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"java.lang.management.MemoryMXBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"java.lang.management.MemoryManagerMXBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"java.lang.management.MemoryManagerMXBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"java.lang.management.MemoryPoolMXBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"java.lang.management.MemoryPoolMXBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"java.lang.management.MemoryUsage",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"java.lang.management.MemoryUsage",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"java.lang.management.MonitorInfo",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"java.lang.management.MonitorInfo",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"java.lang.management.PlatformLoggingMXBean",
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"getLoggerLevel","parameterTypes":["java.lang.String"] },{"name":"getLoggerNames","parameterTypes":[] },{"name":"getParentLoggerName","parameterTypes":["java.lang.String"] },{"name":"setLoggerLevel","parameterTypes":["java.lang.String","java.lang.String"] }]
+},
+{
+  "type":"java.lang.management.PlatformLoggingMXBean",
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"getLoggerLevel","parameterTypes":["java.lang.String"] },{"name":"getLoggerNames","parameterTypes":[] },{"name":"getParentLoggerName","parameterTypes":["java.lang.String"] },{"name":"setLoggerLevel","parameterTypes":["java.lang.String","java.lang.String"] }]
+},
+{
+  "type":"java.lang.management.RuntimeMXBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"java.lang.management.RuntimeMXBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"java.lang.management.ThreadInfo",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"java.lang.management.ThreadInfo",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"java.math.BigDecimal"
+},
+{
+  "type":"java.math.BigDecimal"
+},
+{
+  "type":"java.math.BigInteger"
+},
+{
+  "type":"java.math.BigInteger"
+},
+{
+  "type":"java.security.AlgorithmParametersSpi"
+},
+{
+  "type":"java.security.AlgorithmParametersSpi"
+},
+{
+  "type":"java.security.interfaces.ECPrivateKey"
+},
+{
+  "type":"java.security.interfaces.ECPrivateKey"
+},
+{
+  "type":"java.security.interfaces.ECPublicKey"
+},
+{
+  "type":"java.security.interfaces.ECPublicKey"
+},
+{
+  "type":"java.security.interfaces.RSAPrivateKey"
+},
+{
+  "type":"java.security.interfaces.RSAPrivateKey"
+},
+{
+  "type":"java.security.interfaces.RSAPublicKey"
+},
+{
+  "type":"java.security.interfaces.RSAPublicKey"
+},
+{
+  "type":"java.util.Date"
+},
+{
+  "type":"java.util.Date"
+},
+{
+  "type":"java.util.PropertyPermission",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String","java.lang.String"] }]
+},
+{
+  "type":"java.util.PropertyPermission",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String","java.lang.String"] }]
+},
+{
+  "type":"java.util.concurrent.atomic.AtomicReference",
+  "fields":[{"name":"value"}]
+},
+{
+  "type":"java.util.concurrent.atomic.AtomicReference",
+  "fields":[{"name":"value"}]
+},
+{
+  "type":"java.util.concurrent.atomic.Striped64",
+  "fields":[{"name":"base"},{"name":"cellsBusy"}]
+},
+{
+  "type":"java.util.concurrent.atomic.Striped64",
+  "fields":[{"name":"base"},{"name":"cellsBusy"}]
+},
+{
+  "type":"java.util.concurrent.atomic.Striped64$Cell",
+  "fields":[{"name":"value"}]
+},
+{
+  "type":"java.util.logging.LogManager",
+  "methods":[{"name":"getLoggingMXBean","parameterTypes":[] }]
+},
+{
+  "type":"java.util.logging.LogManager",
+  "methods":[{"name":"getLoggingMXBean","parameterTypes":[] }]
+},
+{
+  "type":"java.util.logging.LoggingMXBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"java.util.logging.LoggingMXBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"javax.management.MBeanOperationInfo",
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"getSignature","parameterTypes":[] }]
+},
+{
+  "type":"javax.management.MBeanOperationInfo",
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"getSignature","parameterTypes":[] }]
+},
+{
+  "type":"javax.management.MBeanServerBuilder",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"javax.management.MBeanServerBuilder",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"javax.management.ObjectName"
+},
+{
+  "type":"javax.management.ObjectName"
+},
+{
+  "type":"javax.management.StandardEmitterMBean",
+  "methods":[{"name":"cacheMBeanInfo","parameterTypes":["javax.management.MBeanInfo"] },{"name":"getCachedMBeanInfo","parameterTypes":[] },{"name":"getMBeanInfo","parameterTypes":[] }]
+},
+{
+  "type":"javax.management.StandardEmitterMBean",
+  "methods":[{"name":"cacheMBeanInfo","parameterTypes":["javax.management.MBeanInfo"] },{"name":"getCachedMBeanInfo","parameterTypes":[] },{"name":"getMBeanInfo","parameterTypes":[] }]
+},
+{
+  "type":"javax.management.openmbean.CompositeData"
+},
+{
+  "type":"javax.management.openmbean.CompositeData"
+},
+{
+  "type":"javax.management.openmbean.OpenMBeanOperationInfoSupport"
+},
+{
+  "type":"javax.management.openmbean.OpenMBeanOperationInfoSupport"
+},
+{
+  "type":"javax.management.openmbean.TabularData"
+},
+{
+  "type":"javax.management.openmbean.TabularData"
+},
+{
+  "type":"jdk.management.jfr.ConfigurationInfo",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"jdk.management.jfr.ConfigurationInfo",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"jdk.management.jfr.EventTypeInfo",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"jdk.management.jfr.EventTypeInfo",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"jdk.management.jfr.FlightRecorderMXBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"jdk.management.jfr.FlightRecorderMXBean",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"jdk.management.jfr.FlightRecorderMXBeanImpl",
+  "queryAllPublicConstructors":true,
+  "methods":[{"name":"cacheMBeanInfo","parameterTypes":["javax.management.MBeanInfo"] },{"name":"getCachedMBeanInfo","parameterTypes":[] },{"name":"getMBeanInfo","parameterTypes":[] },{"name":"getNotificationInfo","parameterTypes":[] }]
+},
+{
+  "type":"jdk.management.jfr.FlightRecorderMXBeanImpl",
+  "queryAllPublicConstructors":true,
+  "methods":[{"name":"cacheMBeanInfo","parameterTypes":["javax.management.MBeanInfo"] },{"name":"getCachedMBeanInfo","parameterTypes":[] },{"name":"getMBeanInfo","parameterTypes":[] },{"name":"getNotificationInfo","parameterTypes":[] }]
+},
+{
+  "type":"jdk.management.jfr.RecordingInfo",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"jdk.management.jfr.RecordingInfo",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"jdk.management.jfr.SettingDescriptorInfo",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"jdk.management.jfr.SettingDescriptorInfo",
+  "queryAllPublicMethods":true
+},
+{
+  "type":"scodec.bits.ByteVector",
+  "fields":[{"name":"hashCode$lzy1"}]
+},
+{
+  "type":"sun.management.ClassLoadingImpl",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"sun.management.ClassLoadingImpl",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"sun.management.CompilationImpl",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"sun.management.CompilationImpl",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"sun.management.ManagementFactoryHelper$1",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"sun.management.ManagementFactoryHelper$1",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"sun.management.ManagementFactoryHelper$PlatformLoggingImpl",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"sun.management.ManagementFactoryHelper$PlatformLoggingImpl",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"sun.management.MemoryImpl",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"sun.management.MemoryImpl",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"sun.management.MemoryManagerImpl",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"sun.management.MemoryManagerImpl",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"sun.management.MemoryPoolImpl",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"sun.management.MemoryPoolImpl",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"sun.management.RuntimeImpl",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"sun.management.RuntimeImpl",
+  "queryAllPublicConstructors":true
+},
+{
+  "type":"sun.misc.Signal",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String"] },{"name":"handle","parameterTypes":["sun.misc.Signal","sun.misc.SignalHandler"] }]
+},
+{
+  "type":"sun.misc.Signal",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String"] },{"name":"handle","parameterTypes":["sun.misc.Signal","sun.misc.SignalHandler"] }]
+},
+{
+  "type":"sun.misc.SignalHandler"
+},
+{
+  "type":"sun.misc.SignalHandler"
+},
+{
+  "type":"sun.misc.Unsafe",
+  "fields":[{"name":"theUnsafe"}]
+},
+{
+  "type":"sun.misc.Unsafe",
+  "fields":[{"name":"theUnsafe"}]
+},
+{
+  "type":"sun.security.provider.NativePRNG",
+  "methods":[{"name":"<init>","parameterTypes":["java.security.SecureRandomParameters"] }]
+},
+{
+  "type":"sun.security.provider.NativePRNG",
+  "methods":[{"name":"<init>","parameterTypes":["java.security.SecureRandomParameters"] }]
+},
+{
+  "type":"sun.security.provider.SHA",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"sun.security.provider.SHA",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"sun.security.provider.SHA2$SHA256",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"sun.security.provider.SHA2$SHA256",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"sun.security.provider.SHA5$SHA512",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"sun.security.provider.SHA5$SHA512",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"sun.security.rsa.RSAKeyFactory$Legacy",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"sun.security.rsa.RSAKeyFactory$Legacy",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"sun.security.rsa.RSASignature$SHA512withRSA",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":"sun.security.rsa.RSASignature$SHA512withRSA",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "type":{
+    "proxy":["sun.misc.SignalHandler"]
+  }
+},
+{
+  "type":{
+    "proxy":["sun.misc.SignalHandler"]
+  }
+},
+{
+  "type":{
+    "proxy":["sun.misc.SignalHandler"]
+  }
+},
+{
+  "type":{
+    "proxy":["sun.misc.SignalHandler"]
+  }
+},
+{
+  "type":{
+    "proxy":["sun.misc.SignalHandler"]
+  }
+},
+{
+  "type":{
+    "proxy":["sun.misc.SignalHandler"]
+  }
+},
+{
+  "type":{
+    "proxy":["sun.misc.SignalHandler"]
+  }
+},
+{
+  "type":{
+    "proxy":["sun.misc.SignalHandler"]
+  }
+},
+{
+  "type":{
+    "proxy":["sun.misc.SignalHandler"]
+  }
+},
+{
+  "type":{
+    "proxy":["sun.misc.SignalHandler"]
+  }
+},
+{
+  "type":{
+    "proxy":["sun.misc.SignalHandler"]
+  }
+},
+{
+  "type":{
+    "proxy":["sun.misc.SignalHandler"]
+  }
+}
+]

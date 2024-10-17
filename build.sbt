@@ -19,7 +19,7 @@ lazy val commonSettings = Seq(
 lazy val main = project
   .in(file("."))
   .settings(commonSettings)
-  .enablePlugins(GluonPlugin)
+  .enablePlugins(GluonPlugin, GraalVMNativeImagePlugin)
   .settings(
     libraryDependencies ++= Seq(
       "ch.qos.logback" % "logback-classic" % "1.5.11",
@@ -30,6 +30,10 @@ lazy val main = project
   )
   .settings(
     name := "cosmic",
+    graalVMNativeImageOptions ++= Seq(
+      "--no-fallback",
+      "-H:ConfigurationFileDirectories=../../native-agent"
+    ),
     assembly / assemblyJarName := "cosmic.jar",
     assembly / assemblyMergeStrategy := {
       case PathList("META-INF", _*) => MergeStrategy.discard
