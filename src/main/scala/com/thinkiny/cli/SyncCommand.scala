@@ -4,20 +4,21 @@ import cats.data.Validated
 import cats.effect.IO
 import cats.syntax.all.*
 import com.monovore.decline.Opts
-import com.thinkiny.domain.MergeStrategy
+import com.thinkiny.domain.SyncOption
 import com.thinkiny.implicits.given
 import com.thinkiny.service.sync.RsyncFile
 import com.thinkiny.domain.FilePath
 import cats.data.NonEmptyList
 
-case class SyncOptions(
+case class SyncFileArgs(
     src: FilePath,
     dest: FilePath,
-    delete: Boolean = false,
-    dry: Boolean = false
+    delete: Boolean,
+    dry: Boolean,
+    verbose: Boolean
 )
 
-object SyncCommand extends CliCommand[SyncOptions, IO]:
+object SyncFileCommand extends CliCommand[SyncFileArgs, IO]:
   def parsePathList(
       args: NonEmptyList[String]
   ): Option[NonEmptyList[FilePath]] =
@@ -26,12 +27,16 @@ object SyncCommand extends CliCommand[SyncOptions, IO]:
       dest <- FilePath(args.last)
     yield NonEmptyList(src, List(dest))
 
-  override def options: Opts[SyncOptions] =
+  override def options: Opts[SyncFileArgs] =
     Opts.subcommand("sync", "sync files") {
       val delete =
-        Opts.flag("delete", "delete extraneous files in dest dirs").orFalse
+        Opts.flag("delete", "delete extraneous files in dest dirs", "d").orFalse
       val dry =
-        Opts.flag("dry", "just report the actions about to make").orFalse
+        Opts.flag("dry", "just report the actions about to make", "n").orFalse
+      val verbose =
+        Opts
+          .flag("verbose", "just report the actions about to make", "v")
+          .orFalse
       val files =
         Opts.arguments[String]("<SRC> <DEST>").mapValidated { args =>
           if args.size == 2 then
@@ -40,18 +45,19 @@ object SyncCommand extends CliCommand[SyncOptions, IO]:
               case _       => Validated.invalidNel(s"invalid path arguments")
           else Validated.invalidNel(s"missing path arguments")
         }
-      (files, delete, dry).mapN((f, del, dry) =>
-        SyncOptions(f.head, f.last, del, dry)
+      (files, delete, dry, verbose).mapN((f, del, dry, verbose) =>
+        SyncFileArgs(f.head, f.last, del, dry, verbose)
       )
     }
 
-  override def run(args: SyncOptions): IO[Unit] =
-    val actions = List.newBuilder[MergeStrategy]
-    if args.dry then actions += MergeStrategy.DryRun
-    if args.delete then actions += MergeStrategy.Same
-    else actions += MergeStrategy.Newer
+  override def run(args: SyncFileArgs): IO[Unit] =
+    val options = List.newBuilder[SyncOption]
+    if args.dry then options += SyncOption.DryRun
+    if args.verbose then options += SyncOption.Verbose
+    if args.delete then options += SyncOption.KeepSync
+    else options += SyncOption.UseNew
     RsyncFile[IO]
-      .sync(args.src, args.dest, actions.result()*)
+      .sync(args.src, args.dest, options.result()*)
       .flatMap {
         case Left(s) => IO.println(s"sync failed, ${s}")
         case _       => IO.println(s"sync success")

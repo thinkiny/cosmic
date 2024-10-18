@@ -7,7 +7,7 @@ class RsyncCmdBuilder(src: FilePath, dest: FilePath, srcIsDir: Boolean):
   private val flags = ListBuffer[String](
     "-arh",
     s"-e 'ssh -T -c aes128-ctr -o Compression=no -x ${getSshArg()}'",
-    "--stats"
+    "--info=progress2" // mac need use: brew install rsync
   )
 
   private def getPort(src: FilePath): Option[Int] = src match

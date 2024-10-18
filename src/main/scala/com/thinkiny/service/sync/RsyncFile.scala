@@ -1,22 +1,22 @@
 package com.thinkiny.service.sync
 
 import com.thinkiny.domain.FilePath
-import com.thinkiny.domain.MergeStrategy
 import com.thinkiny.service.location.LocationPath
 import com.thinkiny.domain.FileState
 import cats.syntax.all.*
 import cats.Monad
+import com.thinkiny.domain.SyncOption
 
 object RsyncFile:
   def apply[F[_]: LocationPath: Execute: Monad] = new SyncFile[F] {
     override def sync(
         src: FilePath,
         dest: FilePath,
-        actions: MergeStrategy*
+        options: SyncOption*
     ): F[Error[Unit]] =
       LocationPath[F].getState(src).flatMap {
         case Some(stat) =>
-          Execute[F].runM(makeCommand(src, dest, stat, actions*))
+          Execute[F].runM(makeCommand(src, dest, stat, options*))
         case _ =>
           Left(s"path doesn't exist: ${src}").pure[F]
       }
@@ -25,15 +25,16 @@ object RsyncFile:
         src: FilePath,
         dest: FilePath,
         srcState: FileState,
-        actions: MergeStrategy*
+        options: SyncOption*
     ): F[String] =
       LocationPath[F].listFiles(src).map { files =>
         val builder = RsyncCmdBuilder(src, dest, srcState.isDir)
         builder.setProjectRoot(files)
-        actions.foreach:
-          case MergeStrategy.Newer  => builder += "-u"
-          case MergeStrategy.Same   => builder += "--delete"
-          case MergeStrategy.DryRun => builder += "-n"
+        options.foreach:
+          case SyncOption.UseNew   => builder += "-u"
+          case SyncOption.KeepSync => builder += "--delete"
+          case SyncOption.DryRun   => builder += "-n"
+          case SyncOption.Verbose  => builder += "-v"
         builder.build()
       }
   }

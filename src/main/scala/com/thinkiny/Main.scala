@@ -11,4 +11,4 @@ object Main extends CommandIOApp(name = "cosmic", header = "manage files"):
     cmds.foldLeft(Opts.never)((b, a) => b.orElse(a.run()))
 
   override def main: Opts[IO[ExitCode]] =
-    runCommands(SyncCommand, LsCommand).map(_.as(ExitCode.Success))
+    runCommands(SyncFileCommand, ListFileCommand).map(_.as(ExitCode.Success))

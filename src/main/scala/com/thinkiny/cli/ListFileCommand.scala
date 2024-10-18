@@ -12,14 +12,14 @@ import java.time.ZoneOffset
 import java.time.format.DateTimeFormatter
 import com.thinkiny.syntax.*
 
-case class LsOptions(file: String, long: Boolean)
+case class ListFileArgs(file: String, long: Boolean)
 
-object LsCommand extends CliCommand[LsOptions, IO]:
-  override def options: Opts[LsOptions] =
+object ListFileCommand extends CliCommand[ListFileArgs, IO]:
+  override def options: Opts[ListFileArgs] =
     Opts.subcommand("ls", "list files") {
       val long = Opts.flag("long", "use long format", "l").orFalse
       val file = Opts.argument[String]("FILE")
-      (file, long).mapN(LsOptions.apply)
+      (file, long).mapN(ListFileArgs.apply)
     }
 
   def blue(s: String): String =
@@ -56,7 +56,7 @@ object LsCommand extends CliCommand[LsOptions, IO]:
           .mkString("\n")
       )
 
-  override def run(args: LsOptions): IO[Unit] =
+  override def run(args: ListFileArgs): IO[Unit] =
     IO.pure(args.file)
       .map(FilePath(_))
       .flatMap:
