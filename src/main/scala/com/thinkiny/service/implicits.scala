@@ -10,5 +10,5 @@ trait ServiceImplicits:
   given Ssh[IO] = SshIO.dsl
   given LocalLocation[IO] = LocalLocationIO.dsl
   given RemoteLocation[IO] = RemoteLocationSsh.dsl
-  given LocationFile[IO] = LocationFile.dsl
+  given LocationPath[IO] = LocationPath.dsl
   given Execute[IO] = Execute.dsl

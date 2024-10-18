@@ -8,6 +8,7 @@ import cats.syntax.all.*
 
 trait Execute[F[_]]:
   def run(cmd: String): F[Error[Unit]]
+  def runM(cmd: F[String]): F[Error[Unit]]
 
 object Execute:
   def apply[F[_]](using ev: Execute[F]) = ev
@@ -15,6 +16,9 @@ object Execute:
   def show[F[_]: Applicative]: Execute[F] = new {
     override def run(cmd: String): F[Error[Unit]] =
       cmd.pure[F].map(i => Right(println(s"show: ${i}")))
+
+    override def runM(cmd: F[String]): F[Error[Unit]] =
+      cmd.map(i => Right(println(s"show: ${i}")))
   }
 
   def dsl: Execute[IO] = new {
@@ -39,4 +43,7 @@ object Execute:
         ProcessBuilder("bash", List("-c", cmd)).spawn[IO].use { process =>
           writeOutput(process) >> checkReturnCode(process)
         }
+
+    override def runM(cmd: IO[String]): IO[Error[Unit]] =
+      cmd.flatMap(run(_))
   }

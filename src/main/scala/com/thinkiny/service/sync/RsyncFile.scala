@@ -2,21 +2,21 @@ package com.thinkiny.service.sync
 
 import com.thinkiny.domain.FilePath
 import com.thinkiny.domain.MergeStrategy
-import com.thinkiny.service.location.LocationFile
+import com.thinkiny.service.location.LocationPath
 import com.thinkiny.domain.FileState
 import cats.syntax.all.*
 import cats.Monad
 
 object RsyncFile:
-  def apply[F[_]: LocationFile: Execute: Monad] = new SyncFile[F] {
+  def apply[F[_]: LocationPath: Execute: Monad] = new SyncFile[F] {
     override def sync(
         src: FilePath,
         dest: FilePath,
         actions: MergeStrategy*
     ): F[Error[Unit]] =
-      LocationFile[F].getState(src).flatMap {
+      LocationPath[F].getState(src).flatMap {
         case Some(stat) =>
-          Execute[F].run(makeCommand(src, dest, stat, actions*))
+          Execute[F].runM(makeCommand(src, dest, stat, actions*))
         case _ =>
           Left(s"path doesn't exist: ${src}").pure[F]
       }
@@ -26,14 +26,14 @@ object RsyncFile:
         dest: FilePath,
         srcState: FileState,
         actions: MergeStrategy*
-    ): String =
-      val builder = RsyncCmdBuilder(src, dest, srcState)
-      builder += "-avr"
-      builder += "--progress"
-      builder += "-e 'ssh -T -c aes128-ctr -o Compression=no -x'"
-      actions.foreach:
-        case MergeStrategy.Newer  => builder += "-u"
-        case MergeStrategy.Same   => builder += "--delete"
-        case MergeStrategy.DryRun => builder += "-n"
-      builder.build()
+    ): F[String] =
+      LocationPath[F].listFiles(src).map { files =>
+        val builder = RsyncCmdBuilder(src, dest, srcState.isDir)
+        builder.setProjectRoot(files)
+        actions.foreach:
+          case MergeStrategy.Newer  => builder += "-u"
+          case MergeStrategy.Same   => builder += "--delete"
+          case MergeStrategy.DryRun => builder += "-n"
+        builder.build()
+      }
   }

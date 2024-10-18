@@ -4,20 +4,17 @@ import com.monovore.decline.Opts
 import cats.effect.IO
 import cats.syntax.all.*
 import com.thinkiny.implicits.given
-import com.thinkiny.service.location.LocationFile
+import com.thinkiny.service.location.LocationPath
 import com.thinkiny.domain.FilePath
 import com.thinkiny.domain.FileState
 import java.time.LocalDateTime
 import java.time.ZoneOffset
 import java.time.format.DateTimeFormatter
+import com.thinkiny.syntax.*
 
 case class LsOptions(file: String, long: Boolean)
 
 object LsCommand extends CliCommand[LsOptions, IO]:
-  extension (s: String)
-    def getFileName: String =
-      s.substring(s.lastIndexOf('/') + 1)
-
   override def options: Opts[LsOptions] =
     Opts.subcommand("ls", "list files") {
       val long = Opts.flag("long", "use long format", "l").orFalse
@@ -47,13 +44,13 @@ object LsCommand extends CliCommand[LsOptions, IO]:
       colorName + s"${" " * spaces}"
 
   def printListFiles(files: List[FileState], longFormat: Boolean): IO[Unit] =
-    val dirsFirst =
+    val fileList =
       files.sortBy(s => (!s.isDir, s.path.getFileName.toLowerCase()))
     if longFormat then
-      IO.println(dirsFirst.map(formatOutput(_, longFormat)).mkString("\n"))
+      IO.println(fileList.map(formatOutput(_, longFormat)).mkString("\n"))
     else
       IO.println(
-        dirsFirst
+        fileList
           .grouped(5)
           .map(_.map(formatOutput(_, longFormat)).mkString)
           .mkString("\n")
@@ -64,11 +61,11 @@ object LsCommand extends CliCommand[LsOptions, IO]:
       .map(FilePath(_))
       .flatMap:
         case x @ Some(p) =>
-          LocationFile[IO].getState(p).map(_.zip(x))
+          LocationPath[IO].getState(p).map(_.zip(x))
         case _ => IO.none
       .flatMap:
         case Some((s, p)) =>
           if s.isDir then
-            LocationFile[IO].listFiles(p).flatMap(printListFiles(_, args.long))
+            LocationPath[IO].listFiles(p).flatMap(printListFiles(_, args.long))
           else IO.println(formatOutput(s, args.long))
         case _ => IO.println(s"no such file: ${args.file}")

@@ -2,15 +2,15 @@ package com.thinkiny.service.location
 
 import com.thinkiny.domain.*
 
-type LocationFile = [F[_]] =>> Location[F, FilePath]
+type LocationPath = [F[_]] =>> Location[F, FilePath]
 
-object LocationFile:
-  def apply[F[_]](using ev: LocationFile[F]) = ev
+object LocationPath:
+  def apply[F[_]](using ev: LocationPath[F]) = ev
 
   def dsl[F[_]](using
       local: LocalLocation[F],
       remote: RemoteLocation[F]
-  ): LocationFile[F] =
+  ): LocationPath[F] =
     new {
       override def getState(p: FilePath): F[Option[FileState]] =
         p match
