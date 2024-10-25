@@ -15,7 +15,8 @@ case class SyncFileArgs(
     dest: FilePath,
     delete: Boolean,
     dry: Boolean,
-    verbose: Boolean
+    verbose: Boolean,
+    excludes: List[String]
 )
 
 object SyncFileCommand extends CliCommand[SyncFileArgs, IO]:
@@ -37,6 +38,8 @@ object SyncFileCommand extends CliCommand[SyncFileArgs, IO]:
         Opts
           .flag("verbose", "just report the actions about to make", "v")
           .orFalse
+      val excludes =
+        Opts.options[String]("exclude", "exclude specific dirs", "e").orEmpty
       val files =
         Opts.arguments[String]("<SRC> <DEST>").mapValidated { args =>
           if args.size == 2 then
@@ -45,8 +48,9 @@ object SyncFileCommand extends CliCommand[SyncFileArgs, IO]:
               case _       => Validated.invalidNel(s"invalid path arguments")
           else Validated.invalidNel(s"missing path arguments")
         }
-      (files, delete, dry, verbose).mapN((f, del, dry, verbose) =>
-        SyncFileArgs(f.head, f.last, del, dry, verbose)
+      (files, delete, dry, verbose, excludes).mapN(
+        (f, del, dry, verbose, excludes) =>
+          SyncFileArgs(f.head, f.last, del, dry, verbose, excludes)
       )
     }
 
@@ -56,6 +60,8 @@ object SyncFileCommand extends CliCommand[SyncFileArgs, IO]:
     if args.verbose then options += SyncOption.Verbose
     if args.delete then options += SyncOption.KeepSync
     else options += SyncOption.UseNew
+    options ++= args.excludes.map(SyncOption.Exclude(_))
+
     RsyncFile[IO]
       .sync(args.src, args.dest, options.result()*)
       .flatMap {

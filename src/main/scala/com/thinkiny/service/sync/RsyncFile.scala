@@ -31,10 +31,11 @@ object RsyncFile:
         val builder = RsyncCmdBuilder(src, dest, srcState.isDir)
         builder.setProjectRoot(files)
         options.foreach:
-          case SyncOption.UseNew   => builder += "-u"
-          case SyncOption.KeepSync => builder += "--delete"
-          case SyncOption.DryRun   => builder += "-n"
-          case SyncOption.Verbose  => builder += "-v"
+          case SyncOption.UseNew     => builder += "-u"
+          case SyncOption.KeepSync   => builder += "--delete"
+          case SyncOption.DryRun     => builder += "-n"
+          case SyncOption.Verbose    => builder += "-v"
+          case SyncOption.Exclude(p) => builder += s"--exclude '${p}'"
         builder.build()
       }
   }
